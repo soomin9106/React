@@ -16,6 +16,9 @@ class Habits extends Component {
     handleAdd = name => {
         this.props.onAdd(name);
     }
+    handleReset=habit => {
+        this.props.onReset(habit);
+    }
     render() {
         return (
         <>
@@ -28,10 +31,13 @@ class Habits extends Component {
                        habit={habit} 
                        onIncrement={this.handleIncrement}
                        onDecrement={this.handleDecrement}
-                       onDelete={this.handleDelete}/>
+                       onDelete={this.handleDelete}
+                       onReset={this.handleReset}/>
                    )
                }
            </ul>
+           <button className="reset" onClick={this.props.onReset}><i className="fas fa-power-off"></i>
+           </button>
         </>
            
         );
